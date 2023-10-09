@@ -58,9 +58,10 @@ module.exports = (appInfo) => {
    * 远程模式-web地址
    */    
   config.remoteUrl = {
-    enable: false,
-    url: 'http://electron-egg.kaka996.com/'
-  };
+    enable: true, // 是否启用
+    url: 'http://cas.wowjoy.cn' // Any web url
+    // url: 'http://cis.wowjoy.cn/inpatient/list?moduleId=4db00b032be04bd28a482660bfad7c09&fromMenu=1'
+  }
 
   /**
    * 内置socket服务
