@@ -1,9 +1,12 @@
 const { Application } = require('ee-core');
+const path = require("path")
+const registerPrint = require('eprint-electron')
 
 class Index extends Application {
 
   constructor() {
     super();
+    registerPrint();
     // this === eeApp;
   }
 
@@ -12,6 +15,7 @@ class Index extends Application {
    */
   async ready () {
     // do some things
+    
   }
 
   /**
@@ -31,8 +35,16 @@ class Index extends Application {
     if (winOpt.show == false) {
       const win = this.electron.mainWindow;
       win.once('ready-to-show', () => {
+        // const CoreElectronWindow = require('ee-core/electron/window');
+        // CoreElectronWindow.createMainWindow({
+          
+        // })
+        // CoreElectronWindow.restoreMainWindow();
+        // win.show();
+        // win.focus();
+        win.webContents.loadFile(path.resolve(__dirname, '../debug.html')); // win.
+        console.log(this.mainWindow.webContents.loadFile)
         win.show();
-        win.focus();
       })
     }
   }

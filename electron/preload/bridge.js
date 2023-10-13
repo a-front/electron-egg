@@ -8,3 +8,5 @@ const { contextBridge, ipcRenderer } = require('electron')
 contextBridge.exposeInMainWorld('electron', {
   ipcRenderer: ipcRenderer,
 })
+
+require("eprint-electron/es/preload")

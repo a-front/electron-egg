@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <label for="url">
+    请输入网址: 
+  </label>
+  <input type="text" name="url" id="url" />
+  <button id="btn" onclick="handleSubmit()">确定</button>
+
+  <script>
+    // function handleEnter() {
+    //   if(event.keyCode !== 13) {
+    //     e.preventDefault();
+    //     // handleSubmit();
+    //   }
+    // }
+
+    function handleSubmit() {
+      let url = document.getElementById('url').value
+      if(!url) return alert('请输入网址');
+      url = url.trim();
+      if(
+        url.startsWith('http://')
+        || url.startsWith('https://')
+      ) {
+        window.location.href = url
+      } else {
+        return alert('请以 http:// 或 https:// 开头');
+      }
+    }
+  </script>
+</body>
+</html>

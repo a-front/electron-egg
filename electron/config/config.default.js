@@ -12,7 +12,7 @@ module.exports = (appInfo) => {
   /**
    * 开发者工具
    */
-  config.openDevTools = false;
+  config.openDevTools = true;
 
   /**
    * 应用程序顶部菜单
@@ -23,16 +23,16 @@ module.exports = (appInfo) => {
    * 主窗口
    */
   config.windowsOption = {
-    title: 'EE框架',
+    title: '华卓医疗',
     width: 980,
     height: 650,
     minWidth: 800,
     minHeight: 650,
     webPreferences: {
       webSecurity: false,
-      contextIsolation: false, // false -> 可在渲染进程中使用electron的api，true->需要bridge.js(contextBridge)
+      contextIsolation: true, // false -> 可在渲染进程中使用electron的api，true->需要bridge.js(contextBridge)
       nodeIntegration: true,
-      //preload: path.join(appInfo.baseDir, 'preload', 'bridge.js'),
+      preload: path.join(appInfo.baseDir, 'preload', 'bridge.js'),
     },
     frame: true,
     show: false,
@@ -143,8 +143,8 @@ module.exports = (appInfo) => {
     },
     tray: {
       enable: true,
-      title: 'EE程序',
-      icon: '/public/images/tray.png'
+      title: '华卓医疗',
+      icon: '/public/images/tray.jpg'
     },
     security: {
       enable: true,
