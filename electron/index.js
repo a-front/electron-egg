@@ -1,4 +1,7 @@
 const { Application } = require('ee-core');
+const { Menu } = require('electron')
+const { localMenuTemplate } = require('./model/shortCuts')
+
 
 class Index extends Application {
 
@@ -19,6 +22,9 @@ class Index extends Application {
    */
   async electronAppReady () {
     // do some things
+     /* 1. 配置本地快捷键 */
+    const menu = Menu.buildFromTemplate(localMenuTemplate)
+    Menu.setApplicationMenu(menu)
   }
 
   /**
@@ -42,7 +48,7 @@ class Index extends Application {
    */  
   async beforeClose () {
     // do some things
-
+    console.log('-close--')
   }
 }
 

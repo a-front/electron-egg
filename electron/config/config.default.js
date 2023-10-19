@@ -59,7 +59,7 @@ module.exports = (appInfo) => {
    */    
   config.remoteUrl = {
     enable: true, // 是否启用
-    url: 'http://cas.wowjoy.cn' // Any web url
+    url: 'http://127.0.0.1:9000'
     // url: 'http://cis.wowjoy.cn/inpatient/list?moduleId=4db00b032be04bd28a482660bfad7c09&fromMenu=1'
   }
 
